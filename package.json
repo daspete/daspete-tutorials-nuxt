@@ -13,10 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.0",
+    "iview": "^2.6.0",
     "js-cookie": "^2.1.4",
     "jwt-decode": "^2.2.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "lru-cache": "^4.1.1",
+    "node-less": "^1.0.0",
+    "node-sass": "^4.5.3",
     "nuxt": "^1.0.0-rc11",
+    "sass-loader": "^6.0.6",
     "uuid": "^3.1.0"
   }
 }

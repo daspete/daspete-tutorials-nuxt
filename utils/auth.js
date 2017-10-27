@@ -1,3 +1,5 @@
+// TODO: Let's create a method to check on load, if the JWT access token is still valid, or if we need to refresh it by a call to the auth/refresh api endpoint
+
 import jwtDecode from 'jwt-decode'
 import Cookie from 'js-cookie'
 

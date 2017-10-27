@@ -42,10 +42,12 @@ export default {
                 // Let's logout from our api
                 let axios = _axios.create(state.data.access_token);
                 await axios.post(Config.api.auth.logout);
-            
                 // commit, that we set our JWT object to null
                 commit('SETJWT', null);
             }catch(err){
+                // commit, that we set our JWT object to null
+                commit('SETJWT', null);
+
                 throw err;
             }
         }

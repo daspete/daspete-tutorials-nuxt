@@ -1,5 +1,7 @@
 module.exports = {
 
+    loading: '~/components/molecules/Loading.vue',
+
     // set the global title, meta tags and styles
     head: {
         titleTemplate: '%s | APP NAME',
@@ -21,7 +23,7 @@ module.exports = {
                 maxAge: 1000 * 60 * 15
             }),
 
-            // Let's preload scripts, css and fonts before showing the content
+            // Let's preload scripts, css and fonts
             shouldPreload: (file, type) => {
                 return [
                     'script',
@@ -34,12 +36,28 @@ module.exports = {
 
     
     // include our global CSS styles
-    css: ['~/assets/css/main.css'],
+    css: [
+        '~/assets/css/ui.less',
+        '~/assets/css/main.scss'
+    ],
 
 
     build: {
-        // Let's use axios as our XHR tool
-        vendor: ['axios']
-    }
+
+        extractCSS: true,
+        
+        vendor: [
+            // Let's use axios as our XHR tool
+            'axios',
+
+            // We use iview as our ui library for now
+            //'iview'
+        ]
+
+    },
+
+    plugins: [
+        //'~/plugins/iview.js'
+    ]
 
 }
