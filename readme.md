@@ -27,25 +27,21 @@ Compiles the complete source package to a ready ² use package into the folder `
 
 
 
-## Config
+## Directories
 
-Configure your api endpoints at the file ``` /config/global.js ```
-
-
-
-## Data store
-
-There is a global vuex data store located at the file ``` /store/index.js ```
-
-This store has modules included, which are located at the folder ``` /store/modules ```
-
-Each of these modules has their own actions, mutations and getters, but all of them can be used globally in your application by the ``` this.$store ``` object, which is available in every component.
-
-
-
-## Pages 
-
-Pages are the entrypoint of each site, for example, when you surf to http://localhost/testing, the page file has to be located at ``` /pages/testing.vue ```
+| Directory   | Description                                                                                                                                                                                       |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /.nuxt      | This directory is used by nuxt.js itself, it contains all the compiled temporary stuff                                                                                                            |
+| /assets     | All the asset stuff lies in here, like images, fonts, extra css,...                                                                                                                               |
+| /components | Contains all the VUE components, which can be used by pages                                                                                                                                       |
+| /config     | Contains the configurations, like API endpoints                                                                                                                                                   |
+| /dist       | When you run ``` npm run generate ``` you will get your production package in this folder                                                                                                         |
+| /layouts    | Contains all the VUE layouts (which are wrappers for the pages)                                                                                                                                   |
+| /middleware | Contains JS middlewares, which can be utilized by the VUE pages (for example an auth middleware)                                                                                                  |
+| /pages      | Contains all the VUE pages (which are also the routes for your app -  so if you have a file called hello.vue, you can browser to http://localhost:3000/hello)                                     |
+| /plugins    | Contains your JS plugins, for examples you can  instantiate vendor libraries and set standard options for them, like axios or jQuery,...)                                                         |
+| /store      | Contains the global store object (index.js) and the modules (which are the data models)                                                                                                           |
+| /utils      | If you want to have a functionality between the two stages  (development and production, so a nodejs development server and a production server like apache,...) you can save your functions here |
 
 
 
