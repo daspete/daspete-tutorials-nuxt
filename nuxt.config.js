@@ -25,7 +25,7 @@ module.exports = {
             // Let's cache our views
             cache: require('lru-cache')({
                 max: 1000,
-                maxAge: 1000 * 60 * 15
+                maxAge: 1000 * 60 * 5
             }),
 
             // Let's preload scripts, css and fonts
@@ -42,7 +42,10 @@ module.exports = {
     
     // include our global CSS styles
     css: [
+        // iview ui library config stylesheet
         '~/assets/css/ui.less',
+
+        // main styles for the web or app
         '~/assets/css/main.scss'
     ],
 
@@ -52,18 +55,34 @@ module.exports = {
         extractCSS: true,
         
         vendor: [
-            // Let's use axios as our XHR tool
-            //'axios',
-
             // We use iview as our ui library for now
             //'iview'
         ]
 
     },
 
+    
+    modules: [
+        // we use the nuxtjs axios module for now
+        '@nuxtjs/axios',
+    ],
+
     plugins: [
-        '~/plugins/axios.js'
         //'~/plugins/iview.js'
-    ]
+    ],
+
+    axios: {
+        requestInterceptor: (config, { store }) => {
+            const data = store.getters['auth/Datas'];
+
+            const token = data !== null ? data.access_token : '';
+
+            if(store.state.data){
+                config.headers.common['Authorization'] = `Bearer ${token}`;
+            }
+
+            return config;
+        }
+    }
 
 }
