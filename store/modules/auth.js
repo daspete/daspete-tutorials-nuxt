@@ -40,8 +40,6 @@ export default {
         async logout({ commit, state }){
             try{
                 // Let's logout from our api
-                //axios.SetToken(state.data);
-
                 await this.$axios.$post(process.env.api.auth.logout);
 
                 // commit, that we set our JWT object to null

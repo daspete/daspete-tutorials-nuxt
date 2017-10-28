@@ -71,13 +71,16 @@ module.exports = {
         //'~/plugins/iview.js'
     ],
 
+
+    // config for axios
     axios: {
         requestInterceptor: (config, { store }) => {
+            // if we have an access token, we set the auth header
             const data = store.getters['auth/Datas'];
 
             const token = data !== null ? data.access_token : '';
 
-            if(store.state.data){
+            if(token){
                 config.headers.common['Authorization'] = `Bearer ${token}`;
             }
 
