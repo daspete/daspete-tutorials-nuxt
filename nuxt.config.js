@@ -70,7 +70,10 @@ module.exports = {
 
     plugins: [
         // we use iview as our ui library for now
-        '~/plugins/iview.js'
+        '~/plugins/iview.js',
+
+        // Let's use our own global event bus
+        '~/plugins/eventbus.js'
     ],
 
 

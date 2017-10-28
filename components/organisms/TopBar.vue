@@ -1,7 +1,9 @@
 <template>
     <div class="user-actions">
-        <login-button v-if="!$store.getters['auth/IsAuthenticated']" v-on:login-success="OnLogin"></login-button>
-        <logout-button v-if="$store.getters['auth/IsAuthenticated']" v-on:logout-success="OnLogout"></logout-button>
+        <login-button v-if="!$store.getters['auth/IsAuthenticated']"></login-button>
+        <logout-button v-if="$store.getters['auth/IsAuthenticated']"></logout-button>
+
+        <button v-on:click="$store.dispatch('tutorials/fetch_premium')">Premium Tutorials</button>
     </div>
 </template>
 
@@ -17,13 +19,20 @@ export default {
         LogoutButton
     },
 
+    created(){
+        // add our global event listeners for store changes
+        this.$store.$bus.$on('login', this.OnLoggedIn);
+        this.$store.$bus.$on('logout', this.OnLoggedOut);
+    },
+
     methods: {
-        OnLogin(){
+        OnLoggedIn(){
             console.log('auth datas', this.$store.getters['auth/Datas']);
         },
 
-        OnLogout(){
+        OnLoggedOut(){
             console.log('logged out');
+            this.$store.dispatch('tutorials/fetch')
         }
     }
 

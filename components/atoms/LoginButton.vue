@@ -15,7 +15,7 @@ export default {
             try{
                 await this.$store.dispatch('auth/login', credentials);
                 
-                this.$emit('login-success');
+                this.$emit('login');
 
                 this.$root.$loading.stop();
             }catch(err){

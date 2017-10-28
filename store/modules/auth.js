@@ -54,11 +54,15 @@ export default {
             if(state.data === null){
                 UnsetJWT();
 
+                this.$bus.$emit('logout');
+
                 return;
             }
 
             if(typeof data !== 'undefined' && typeof data.access_token !== 'undefined'){
                 SetJWT(data);
+
+                this.$bus.$emit('login');
             }
         }
     }

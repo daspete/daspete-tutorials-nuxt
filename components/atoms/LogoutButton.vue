@@ -15,8 +15,6 @@ export default {
             try{
                 await this.$store.dispatch('auth/logout');
 
-                this.$emit('logout-success');
-
                 this.$root.$loading.stop();
             }catch(err){
                 this.$root.$loading.fail();
