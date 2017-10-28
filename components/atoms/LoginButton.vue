@@ -12,8 +12,6 @@ export default {
         async Login(credentials){
             this.$root.$loading.start();
 
-            console.log(this.$axios);
-
             try{
                 await this.$store.dispatch('auth/login', credentials);
                 

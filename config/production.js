@@ -1,6 +1,10 @@
 const APIBASEURL = 'http://api-production.dev/api/';
 
 const environment = {
+    app: {
+        name: 'DP Production'
+    },
+    
     api: {
         auth: {
             login: `${APIBASEURL}auth/login`,

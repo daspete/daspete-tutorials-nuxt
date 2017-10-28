@@ -3,13 +3,15 @@ const   config = require('config'),
 
 module.exports = {
 
+    // set our environment, which is located at /config/[environment].js
     env: environment,
 
+    // define a custom component for the global loading animation (especially for the router loading)
     loading: '~/components/molecules/Loading.vue',
 
     // set the global title, meta tags and styles
     head: {
-        titleTemplate: '%s | APP NAME',
+        titleTemplate: '%s | ' + environment.app.name,
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -51,12 +53,11 @@ module.exports = {
 
 
     build: {
-
+        // we don't want inline css in the html, so we extract it
         extractCSS: true,
         
         vendor: [
-            // We use iview as our ui library for now
-            //'iview'
+            // set our vendor packages, if there are any
         ]
 
     },
@@ -68,7 +69,8 @@ module.exports = {
     ],
 
     plugins: [
-        //'~/plugins/iview.js'
+        // we use iview as our ui library for now
+        '~/plugins/iview.js'
     ],
 
 

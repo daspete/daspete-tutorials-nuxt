@@ -1,4 +1,69 @@
-@import '~iview/src/styles/index.less';
+///////////////////////////////////////////////////////////
+// ui lib loading
+/////////////////////////////////////////////////////////
+
+// you can include the whole ui lib at once
+//@import '~iview/src/styles/index.less';
+
+// or you can select the modules you need from it
+@import "~iview/src/styles/custom";
+@import "~iview/src/styles/mixins/index";
+@import "~iview/src/styles/common/index";
+@import "~iview/src/styles/animation/index";
+
+
+@import "~iview/src/styles/components/button";
+@import "~iview/src/styles/components/affix";
+// @import "~iview/src/styles/components/back-top";
+// @import "~iview/src/styles/components/badge";
+// @import "~iview/src/styles/components/circle";
+// @import "~iview/src/styles/components/spin";
+// @import "~iview/src/styles/components/alert";
+@import "~iview/src/styles/components/collapse";
+@import "~iview/src/styles/components/card";
+@import "~iview/src/styles/components/message";
+@import "~iview/src/styles/components/notice";
+@import "~iview/src/styles/components/radio";
+@import "~iview/src/styles/components/checkbox";
+@import "~iview/src/styles/components/switch";
+@import "~iview/src/styles/components/input-number";
+@import "~iview/src/styles/components/scroll";
+@import "~iview/src/styles/components/tag";
+// @import "~iview/src/styles/components/loading-bar";
+@import "~iview/src/styles/components/progress";
+// @import "~iview/src/styles/components/timeline";
+@import "~iview/src/styles/components/page";
+// @import "~iview/src/styles/components/steps";
+@import "~iview/src/styles/components/modal";
+@import "~iview/src/styles/components/select";
+@import "~iview/src/styles/components/select-dropdown";
+@import "~iview/src/styles/components/tooltip";
+@import "~iview/src/styles/components/poptip";
+@import "~iview/src/styles/components/input";
+@import "~iview/src/styles/components/slider";
+// @import "~iview/src/styles/components/cascader";
+@import "~iview/src/styles/components/transfer";
+@import "~iview/src/styles/components/table";
+@import "~iview/src/styles/components/dropdown";
+@import "~iview/src/styles/components/tabs";
+@import "~iview/src/styles/components/menu";
+// @import "~iview/src/styles/components/date-picker";
+// @import "~iview/src/styles/components/time-picker";
+@import "~iview/src/styles/components/form";
+@import "~iview/src/styles/components/carousel";
+@import "~iview/src/styles/components/rate";
+// @import "~iview/src/styles/components/upload";
+// @import "~iview/src/styles/components/tree";
+// @import "~iview/src/styles/components/avatar";
+// @import "~iview/src/styles/components/color-picker";
+@import "~iview/src/styles/components/auto-complete";
+
+
+
+
+///////////////////////////////////////////////////////////
+// Global config for the ui lib
+/////////////////////////////////////////////////////////
 
 // Prefix
 @css-prefix             : ivu-;
@@ -160,3 +225,57 @@
 @slider-button-wrap-size   : 18px;
 @slider-button-wrap-offset : -4px;
 @slider-disabled-color     : #ccc;
+
+// Date-Picker
+// @date-picker-cells-width: 196px;
+
+
+////////////////////////////////////////////////////
+// Element class names
+//////////////////////////////////////////////////
+
+// // Alert
+// @alert-prefix-cls: ~"@{css-prefix}alert";
+// @icon-prefix-cls: ~"@{css-prefix}icon";
+
+// // Auto-Complete
+// @auto-complete-prefix-cls: ~"@{css-prefix}auto-complete";
+
+// // Avatar
+// @avatar-prefix-cls: ~"@{css-prefix}avatar";
+
+// // Back to top
+// @backtop-prefix-cls: ~"@{css-prefix}back-top";
+
+// // Badge
+// @badge-prefix-cls: ~"@{css-prefix}badge";
+
+// // Button
+// @btn-prefix-cls: ~"@{css-prefix}btn";
+
+// // Card
+// @card-prefix-cls: ~"@{css-prefix}card";
+
+// // Carousel
+// @carousel-prefix-cls: ~"@{css-prefix}carousel";
+// @carousel-item-prefix-cls: ~"@{css-prefix}carousel-item";
+
+// // Cascader
+// @cascader-prefix-cls: ~"@{css-prefix}cascader";
+// @cascader-item-prefix-cls: ~"@{css-prefix}cascader-menu-item";
+
+// // Checkbox
+// @checkbox-prefix-cls: ~"@{css-prefix}checkbox";
+
+// // Chart circle
+// @circle-prefix-cls: ~"@{css-prefix}chart-circle";
+
+// // Collapse
+// @collapse-prefix-cls: ~"@{css-prefix}collapse";
+
+// // Color-Picker
+// @color-picker-prefix-cls: ~"@{css-prefix}color-picker";
+
+// @date-picker-prefix-cls: ~"@{css-prefix}date-picker";
+// @picker-prefix-cls: ~"@{css-prefix}picker";
+
