@@ -3,7 +3,7 @@ import { GetJWTFromCookie, GetJWTFromLocalStorage } from '~/utils/auth'
 export default ({ isServer, store, req }) => {
 
     // When we are on the dev server and we didn't get any request, 
-    //well, we just return, because... this shouldn't happen :)
+    // well, we just return, because... this shouldn't happen :)
     if(isServer && !req) return;
 
     let jwt = null;

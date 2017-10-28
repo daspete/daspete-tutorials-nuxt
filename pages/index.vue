@@ -28,23 +28,6 @@ export default {
         await store.dispatch('tutorials/fetch');
 
         return {}
-    },
-
-    methods: {
-        checkLogin(){
-            console.log(this.$store.getters['auth/Datas']);
-        },
-
-        onLoggedIn(){
-            console.log('auth', this.$store.state.auth);
-            console.log('auth getter', this.$store.getters['auth/Datas']);
-        },
-
-        onLoggedOut(){
-            console.log('auth', this.$store.state.auth);
-            console.log('auth getter', this.$store.getters['auth/Datas']);
-        }
-
     }
 
 }
