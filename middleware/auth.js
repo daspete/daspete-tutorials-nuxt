@@ -15,5 +15,5 @@ export default ({ isServer, store, req }) => {
         jwt = GetJWTFromLocalStorage();
     }
 
-    store.commit('auth/UPDATEJWT', jwt);
+    store.commit('auth/UPDATE', jwt);
 }

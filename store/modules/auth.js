@@ -29,8 +29,8 @@ export default {
                 // just wait for the login process to complete
                 const { data } = await axios.post(process.env.api.auth.login, credentials);
                 
-                // commit the response with our UPDATEJWT mutation function
-                commit('UPDATEJWT', data);
+                // commit the response with our UPDATE mutation function
+                commit('UPDATE', data);
             }catch(err){
                 throw err;
             }
@@ -45,9 +45,9 @@ export default {
                 await axios.post(process.env.api.auth.logout);
 
                 // commit, that we set our JWT object to null
-                commit('UPDATEJWT', null);
+                commit('UPDATE', null);
             }catch(err){
-                commit('UPDATEJWT', null);
+                commit('UPDATE', null);
 
                 throw err;
             }
@@ -55,7 +55,7 @@ export default {
     },
 
     mutations: {
-        UPDATEJWT(state, data){
+        UPDATE(state, data){
             state.data = data || null;
 
             if(state.data === null){
