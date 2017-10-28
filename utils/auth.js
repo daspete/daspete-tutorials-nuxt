@@ -6,6 +6,7 @@ import Cookie from 'js-cookie'
 export const SetJWT = (jwt) => {
     if(process.SERVER_BUILD) return;
 
+    // when we are in browser mode, we save the JWT in the localstorage
     if(typeof window !== 'undefined'){
         window.localStorage.setItem('jwt', JSON.stringify(jwt));
         window.localStorage.removeItem('logout');
@@ -17,6 +18,7 @@ export const SetJWT = (jwt) => {
 export const UnsetJWT = () => {
     if(process.SERVER_BUILD) return;
 
+    // when we are in browser mode, we remove the JWT from the localstorage
     if(typeof window !== 'undefined'){
         window.localStorage.removeItem('jwt');
         window.localStorage.setItem('logout', Date.now());

@@ -30,10 +30,6 @@ export default {
         return {}
     },
 
-    mounted(){
-        
-    },
-
     methods: {
         checkLogin(){
             console.log(this.$store.getters['auth/Datas']);
@@ -49,7 +45,6 @@ export default {
             console.log('auth getter', this.$store.getters['auth/Datas']);
         }
 
-        
     }
 
 }
