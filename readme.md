@@ -38,3 +38,14 @@ This is a testproject to check if nuxt.js is ready for use in production (at lea
 
 
 
+## Resources
+
+- [Vue.js](https://vuejs.org/v2/guide/)
+- [Vue router](https://router.vuejs.org/en/)
+- [NUXT API](https://nuxtjs.org/api/)
+- [iView UI components](https://www.iviewui.com/docs/guide/install-en)
+- [NUXT axios module](https://github.com/nuxt-community/axios-module)
+- [Vuex data store](https://vuex.vuejs.org/en/)
+- [LRU cache - for handling page cache](https://github.com/isaacs/node-lru-cache)
+- [JWT decode - for handling JSON web tokens](https://github.com/auth0/jwt-decode)
+- [Config - for setting up multiple environment](https://github.com/lorenwest/node-config)
