@@ -98,6 +98,10 @@ export default {
         return {}
     },
 
+    mounted(){
+        
+    },
+
     methods: {
         onMenuItemSelect(menuItemName){
             

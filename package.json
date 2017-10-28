@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.0",
+    "config": "^1.27.0",
     "iview": "^2.6.0",
     "js-cookie": "^2.1.4",
     "jwt-decode": "^2.2.0",

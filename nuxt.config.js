@@ -1,4 +1,9 @@
+const   config = require('config'),
+        environment = config.get('environment');
+
 module.exports = {
+
+    env: environment,
 
     loading: '~/components/molecules/Loading.vue',
 
@@ -48,7 +53,7 @@ module.exports = {
         
         vendor: [
             // Let's use axios as our XHR tool
-            'axios',
+            //'axios',
 
             // We use iview as our ui library for now
             //'iview'
@@ -57,6 +62,7 @@ module.exports = {
     },
 
     plugins: [
+        '~/plugins/axios.js'
         //'~/plugins/iview.js'
     ]
 

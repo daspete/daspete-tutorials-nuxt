@@ -1,8 +1,9 @@
-import _axios from '~/plugins/axios.js'
-import Config from '~/config/global.js'
+import { Ajax } from '~/plugins/axios.js'
 
 import { SetJWT, UnsetJWT } from '~/utils/auth.js'
 
+
+const axios = Ajax;
 
 export default {
     state(){
@@ -26,11 +27,10 @@ export default {
         async login({ commit }, credentials){
             try{
                 // just wait for the login process to complete
-                let axios = _axios.create();
-                const { data } = await axios.post(Config.api.auth.login, credentials);
+                const { data } = await axios.post(process.env.api.auth.login, credentials);
                 
-                // commit the response with our SETJWT mutation function
-                commit('SETJWT', data);
+                // commit the response with our UPDATEJWT mutation function
+                commit('UPDATEJWT', data);
             }catch(err){
                 throw err;
             }
@@ -40,13 +40,14 @@ export default {
         async logout({ commit, state }){
             try{
                 // Let's logout from our api
-                let axios = _axios.create(state.data.access_token);
-                await axios.post(Config.api.auth.logout);
+                axios.SetToken(state.data);
+
+                await axios.post(process.env.api.auth.logout);
+
                 // commit, that we set our JWT object to null
-                commit('SETJWT', null);
+                commit('UPDATEJWT', null);
             }catch(err){
-                // commit, that we set our JWT object to null
-                commit('SETJWT', null);
+                commit('UPDATEJWT', null);
 
                 throw err;
             }
@@ -54,11 +55,12 @@ export default {
     },
 
     mutations: {
-        SETJWT(state, data){
+        UPDATEJWT(state, data){
             state.data = data || null;
 
             if(state.data === null){
                 UnsetJWT();
+
                 return;
             }
 
