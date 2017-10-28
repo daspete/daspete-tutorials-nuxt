@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 export default {
     state(){
         return {
@@ -7,10 +5,16 @@ export default {
         }
     },
 
+    getters: {
+        Datas(state){
+            return state.data;
+        }
+    },
+
     actions: {
         async fetch({ commit }){
             try{
-                const { data } = await axios.get(Config.api.tutorials);
+                const data = await this.$axios.$get(process.env.api.tutorials);
                 
                 commit('SETTUTORIALS', data);
 

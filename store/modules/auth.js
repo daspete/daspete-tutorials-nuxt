@@ -1,9 +1,4 @@
-//import { Ajax } from '~/plugins/axios.js'
-
 import { SetJWT, UnsetJWT } from '~/utils/auth.js'
-
-
-//const axios = Ajax;
 
 export default {
     state(){
