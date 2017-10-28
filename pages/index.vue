@@ -14,6 +14,10 @@ export default {
 
     layout: 'master',
 
+    head: {
+        title: 'Home'
+    },
+
     middleware: [
         'auth'
     ],
