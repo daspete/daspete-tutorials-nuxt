@@ -15,7 +15,7 @@ This is a testproject to check if nuxt.js is ready for use in production (at lea
 
 | Command            | Description                                                                                                                                 |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-|  npm run dev       | Starts a web server at [http://localhost:3000](http://localhost:3000) \and starts the watcher, which listens to file changes to recompile   |
+|  npm run dev       | Starts a web server at [http://localhost:3000](http://localhost:3000) and starts the watcher, which listens to file changes to recompile    |
 |  npm run generate  | Compiles the complete source package to a ready ² use package into the folder ``` /dist ```                                                 |
 
 
