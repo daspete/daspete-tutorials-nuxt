@@ -30,8 +30,7 @@ export default {
                 commit('SETTUTORIALS', data);
 
             }catch(err){
-                console.log(err);
-                //throw err;
+                throw err;
             }
         }
     },

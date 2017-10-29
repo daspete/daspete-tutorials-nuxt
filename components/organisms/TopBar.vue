@@ -2,8 +2,6 @@
     <div class="user-actions">
         <login-button v-if="!$store.getters['auth/IsAuthenticated']"></login-button>
         <logout-button v-if="$store.getters['auth/IsAuthenticated']"></logout-button>
-
-        <button v-on:click="$store.dispatch('tutorials/fetch_premium')">Premium Tutorials</button>
     </div>
 </template>
 
@@ -27,12 +25,11 @@ export default {
 
     methods: {
         OnLoggedIn(){
-            console.log('auth datas', this.$store.getters['auth/Datas']);
+            console.log('logged in', this.$store.getters['auth/Datas']);
         },
 
         OnLoggedOut(){
             console.log('logged out');
-            this.$store.dispatch('tutorials/fetch')
         }
     }
 
