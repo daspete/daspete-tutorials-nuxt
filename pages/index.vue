@@ -29,7 +29,12 @@ export default {
 
     async asyncData({ store }){
         // here we are preloading all the datas, we need to have before rendering (for seo, and so on)
-        await store.dispatch('tutorials/fetch');
+        if(store.getters['auth/Datas'] !== null){
+            await store.dispatch('tutorials/fetch_premium');
+        }else{
+            await store.dispatch('tutorials/fetch');
+        }
+        
 
         return {}
     }
