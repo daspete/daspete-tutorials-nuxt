@@ -1,4 +1,4 @@
-import { SetJWT, UnsetJWT } from '~/utils/auth.js'
+import { SetJWT, UnsetJWT, GetJWTFromLocalStorage } from '~/utils/auth.js'
 
 export default {
     state(){

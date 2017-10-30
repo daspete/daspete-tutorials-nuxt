@@ -62,6 +62,19 @@ module.exports = {
 
     },
 
+    generate: {
+        // Let's define the routes, which are generated in the production package
+        routes: [
+            '/'
+        ]
+    },
+
+    router: {
+        // Let's define our middlewares on route change
+        middleware: [
+            'auth'
+        ]
+    },
     
     modules: [
         // we use the nuxtjs axios module for now
@@ -83,7 +96,7 @@ module.exports = {
             // if we have an access token, we set the auth header
             const data = store.getters['auth/Datas'];
 
-            const token = data !== null ? data.access_token : '';
+            const token = typeof data !== 'undefined' && data !== null ? data.access_token : '';
 
             if(token){
                 config.headers.common['Authorization'] = `Bearer ${token}`;

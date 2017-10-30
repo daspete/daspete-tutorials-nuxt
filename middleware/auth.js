@@ -1,12 +1,15 @@
 import { GetJWTFromCookie, GetJWTFromLocalStorage } from '~/utils/auth'
 
-export default ({ isServer, store, req }) => {
+export default({ isServer, store, req }) => {
+    if(typeof window !== 'undefined'){
+        jwt = GetJWTFromLocalStorage();
 
-    // When we are on the dev server and we didn't get any request, 
-    // well, we just return, because... this shouldn't happen :)
+        store.commit('auth/UPDATE', jwt);
+        
+        return;
+    }
+    // When we are generating the pages, we can't get cookies, very sad...
     if(isServer && !req) return;
-
-    let jwt = null;
 
     // when we are on the dev server, we can get our jwt data from the cookie
     if(isServer){
