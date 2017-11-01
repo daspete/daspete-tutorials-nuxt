@@ -15,22 +15,6 @@ export default {
     components: {
         LoginButton,
         LogoutButton
-    },
-
-    created(){
-        // add our global event listeners for store changes
-        this.$store.$bus.$on('login', this.OnLoggedIn);
-        this.$store.$bus.$on('logout', this.OnLoggedOut);
-    },
-
-    methods: {
-        OnLoggedIn(){
-            console.log('logged in', this.$store.getters['auth/Datas']);
-        },
-
-        OnLoggedOut(){
-            console.log('logged out');
-        }
     }
 
 }

@@ -31,7 +31,7 @@ export default {
             }
         },
     
-    
+        // logout from api and clear the state
         async logout({ commit, state }){
             try{
                 // Let's logout from our api
@@ -54,7 +54,8 @@ export default {
             if(state.data === null){
                 UnsetJWT();
 
-                this.$bus.$emit('logout');
+                if(typeof this.$bus !== 'undefined')
+                    this.$bus.$emit('logout');
 
                 return;
             }
@@ -62,7 +63,8 @@ export default {
             if(typeof data !== 'undefined' && typeof data.access_token !== 'undefined'){
                 SetJWT(data);
 
-                this.$bus.$emit('login');
+                if(typeof this.$bus !== 'undefined')
+                    this.$bus.$emit('login');
             }
         }
     }

@@ -25,7 +25,7 @@ export default {
         },
 
         fail(){
-
+            this.loading = false;
         },
 
         increase(percent){

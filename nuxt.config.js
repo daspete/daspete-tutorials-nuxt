@@ -7,7 +7,7 @@ module.exports = {
     env: environment,
 
     // define a custom component for the global loading animation (especially for the router loading)
-    loading: '~/components/molecules/Loading.vue',
+    //loading: '~/components/molecules/Loading.vue',
 
     // set the global title, meta tags and styles
     head: {
@@ -64,16 +64,9 @@ module.exports = {
 
     generate: {
         // Let's define the routes, which are generated in the production package
-        routes: [
-            '/'
-        ]
-    },
-
-    router: {
-        // Let's define our middlewares on route change
-        middleware: [
-            'auth'
-        ]
+        // routes: [
+        //     '/'
+        // ]
     },
     
     modules: [

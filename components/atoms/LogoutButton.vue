@@ -10,15 +10,9 @@ export default {
 
     methods: {
         async Logout(){
-            this.$root.$loading.start();
-
             try{
                 await this.$store.dispatch('auth/logout');
-
-                this.$root.$loading.stop();
             }catch(err){
-                this.$root.$loading.fail();
-
                 throw err;
             }
         }
