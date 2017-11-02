@@ -11,6 +11,11 @@ const environment = {
             logout: `${APIBASEURL}auth/logout`
         },
 
+        page: {
+            topmenu: `${APIBASEURL}topmenu`,
+            meta: `${APIBASEURL}meta`,
+        },
+
         tutorials: {
             standard: `${APIBASEURL}tutorials`,
             premium: `${APIBASEURL}tutorials/premium`

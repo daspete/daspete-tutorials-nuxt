@@ -1,12 +1,13 @@
 <template>
-    <div class="home">
-        <top-bar></top-bar>
+    <div class="admin">
+        Welcome to the admin<br>
+        <logout-button></logout-button>
     </div>
 </template>
 
 <script>
 import AppLink from '~/components/atoms/AppLink.vue'
-import TopBar from '~/components/organisms/TopBar.vue'
+import LogoutButton from '~/components/atoms/LogoutButton.vue'
 
 
 export default {
@@ -17,33 +18,27 @@ export default {
 
 
     // Set the meta data of the current page here
-    head(){
-        return {
-            title: this.$store.getters['page/Meta'].title,
-            meta: this.$store.getters['page/Meta'].meta
-        }   
+    head: {
+        title: 'Admin'
     },
 
 
     // before a page is rendered, we can create middleware functions
     // to check, if a user can view this page
     middleware: [
-        'auth'
+        'auth',
+        'isLoggedOut'
     ],
 
     // we have to register our page components here
     components: {
         AppLink,
-        TopBar
+        LogoutButton
     },
 
 
-
-    async asyncData({ store }){
-        // here we are preloading all the datas, we need to have before rendering (for seo, and so on)
-        await store.dispatch('page/fetchMeta');
-        await store.dispatch('page/fetchTopmenu');
-        
+    // here we are preloading all the datas, we need to have before rendering (for seo, and so on)
+    async asyncData(context){
         // return datas here
         return {
 

@@ -12,7 +12,10 @@ export default {
         async Logout(){
             try{
                 await this.$store.dispatch('auth/logout');
+
+                this.$router.push('admin/login');
             }catch(err){
+                this.$Message.error('Fehler beim Ausloggen');
                 throw err;
             }
         }

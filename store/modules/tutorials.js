@@ -17,7 +17,6 @@ export default {
                 const data = await this.$axios.$get(process.env.api.tutorials.standard);
                 
                 commit('SETTUTORIALS', data);
-
             }catch(err){
                 throw err;
             }
@@ -28,7 +27,6 @@ export default {
                 const data = await this.$axios.$get(process.env.api.tutorials.premium);
                 
                 commit('SETTUTORIALS', data);
-
             }catch(err){
                 throw err;
             }

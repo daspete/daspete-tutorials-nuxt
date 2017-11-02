@@ -27,6 +27,8 @@ export default {
                 // commit the response with our UPDATE mutation function
                 commit('UPDATE', data);
             }catch(err){
+                commit('UPDATE', null);
+
                 throw err;
             }
         },
@@ -49,22 +51,17 @@ export default {
 
     mutations: {
         UPDATE(state, data){
+            console.log(data);
             state.data = data || null;
 
             if(state.data === null){
                 UnsetJWT();
-
-                if(typeof this.$bus !== 'undefined')
-                    this.$bus.$emit('logout');
 
                 return;
             }
 
             if(typeof data !== 'undefined' && typeof data.access_token !== 'undefined'){
                 SetJWT(data);
-
-                if(typeof this.$bus !== 'undefined')
-                    this.$bus.$emit('login');
             }
         }
     }
